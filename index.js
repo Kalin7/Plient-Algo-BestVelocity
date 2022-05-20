@@ -31,6 +31,7 @@ function isInputValid(data) {
 }
 
 function bestSequence(getSequence) {
+    
     const seq = getSequence()
     const result = [];
     let i = 0;
@@ -41,7 +42,12 @@ function bestSequence(getSequence) {
             return;
         }
 
-        result.push({index: i, sequence: seq.slice(0, 3), sum: seq.slice(0, 3).reduce((a, b) => Number(a) + Number(b))});
+        result.push({
+             index: i, 
+             sequence: seq.slice(0, 3), 
+             sum: seq.slice(0, 3).reduce((a, b) => Number(a) + Number(b))
+        });
+        
         seq.shift();
         i++;
 
